@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/100x50" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="complaint-form">
+            <h2>Add a Complaint</h2>
+            <button id="addComplaintBtn" class="add-complaint-btn">Add New Complaint</button>
+        </section>
+
+        <section class="filter-section">
+            <h2>Filter Complaints</h2>
+            <label for="filter">Sort by:</label>
+            <select id="filter">
+                <option value="rating">Rating</option>
+                <option value="recent">Recently Uploaded</option>
+                <option value="older">Older Uploads</option>
+            </select>
+            <input type="text" placeholder="Search complaints..." />
+        </section>
+
+        <section class="image-container">
+            <h2>Complaints</h2>
+            <div class="complaint-item" tabindex="0">
+                <div class="complaint-summary">
+                    <img src="https://via.placeholder.com/300x200/81C784/ffffff" alt="Complaint Image">
+                    <div class="complaint-details">
+                        <p><strong>Upload Date:</strong> 2023-10-01</p>
+                       
+                        <p><strong>Address:</strong> 123 Main St, City, Country</p>
+                    </div>
+                </div>
+                <div class="complaint-expanded">
+                    <h3>Complaint Details</h3>
+                    <p><strong>Uploaded by:</strong> John Doe</p>
+                    <p><strong>Complaint:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc. Sed euismod, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc.</p>
+                    <p><strong>Area:</strong> Downtown</p>
+                    <p><strong>Pincode:</strong> 12345</p>
+                    <p><strong>Votes:</strong> 150</p>
+                    <p><strong>Status:</strong> <span class="status accepted">Accepted</span></p>
+                    <p><strong>Expected Resolution Date:</strong> 2023-12-31</p>
+                </div>
+            </div>
+            <div class="complaint-item" tabindex="0">
+                <div class="complaint-summary">
+                    <img src="https://via.placeholder.com/300x200/81C784/ffffff" alt="Complaint Image">
+                    <div class="complaint-details">
+                        <p><strong>Upload Date:</strong> 2023-10-01</p>
+                        
+                        <p><strong>Address:</strong> 123 Main St, City, Country</p>
+                    </div>
+                </div>
+                <div class="complaint-expanded">
+                    <h3>Complaint Details</h3>
+                    <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Address:</strong> 123 Main St, City, Country</p>
+        <p><strong>Contact Number:</strong> +1234567890</p>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p><strong>Status:</strong> <span class="status accepted">Accepted</span></p>
+                </div>
+            </div>
+ 
+            
+            
+            <!-- Add more complaint items as needed -->
+             
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Complaint Management System. All rights reserved.</p>
+            <p>Contact: (123) 456-7890 | Email: info@example.com</p>
+        </div>
+    </footer>
+
+    <form id="newComplaintForm" enctype="multipart/form-data">
+    <div id="complaint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-complaint-details"></div>
+        </div>
+    </div>
+    <div id="add-complaint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-complaint">&times;</span>
+            <h2>Add New Complaint</h2>
+            <form id="newComplaintForm">
+                <div class="form-group">
+                    <label for="complaintImage">Upload Image:</label>
+                    <input type="file" id="complaintImage" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="uploaderName">Your Name:</label>
+                    <input type="text" id="uploaderName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Complaint Description:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+    </form>
+    <div id="complaint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-complaint-details">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <script src="mainpage2.js"></script>
+</body>
+</html>
